@@ -1,5 +1,5 @@
 #!/bin/bash
-# $Id: mblkIP,v 1.10 2020/03/02 10:17:01 fulford Exp fulford $
+# $Id: mblkIP,v 1.10 2020/03/02 10:17:01 fulford Exp $
 # $Source: /src/admin/usr/local/etc/RCS/mblkIP,v $
 # $Revision: 1.10 $
 # Author C W Fulford.
@@ -10,7 +10,7 @@
 cmd=`basename $0`
 added=0
 max=2000
-ver=`echo "$Id: mblkIP,v 1.10 2020/03/02 10:17:01 fulford Exp fulford $"|awk '{print $3,$4,$5}'`
+ver=`echo "$Id: mblkIP,v 1.10 2020/03/02 10:17:01 fulford Exp $"|awk '{print $3,$4,$5}'`
 syntax="$cmd  [-d]  [-v] [-m <max instances>|-V]"
 while [ $# -gt 0 ] ;do
 	case $1 in 
