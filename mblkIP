@@ -1,7 +1,7 @@
 #!/bin/bash
-# $Id: mblkIP,v 1.9 2020/01/01 01:30:58 fulford Exp fulford $
+# $Id: mblkIP,v 1.10 2020/03/02 10:17:01 fulford Exp fulford $
 # $Source: /src/admin/usr/local/etc/RCS/mblkIP,v $
-# $Revision: 1.9 $
+# $Revision: 1.10 $
 # Author C W Fulford.
 # Copyright 2016 (c) C W Fulford.
 # Licensed for public use under the LGPL, .
@@ -10,7 +10,7 @@
 cmd=`basename $0`
 added=0
 max=2000
-ver=`echo "$Id: mblkIP,v 1.9 2020/01/01 01:30:58 fulford Exp fulford $"|awk '{print $3,$4,$5}'`
+ver=`echo "$Id: mblkIP,v 1.10 2020/03/02 10:17:01 fulford Exp fulford $"|awk '{print $3,$4,$5}'`
 syntax="$cmd  [-d]  [-v] [-m <max instances>|-V]"
 while [ $# -gt 0 ] ;do
 	case $1 in 
@@ -19,7 +19,7 @@ while [ $# -gt 0 ] ;do
 		-m) max=$2;shift 2;;
 		-r) restart=0;shift;;
 		-v) verbose=:;shift;;
-		-V) echo "$cmd $Revision: 1.9 $ $Date: 2020/01/01 01:30:58 $"|awk '{print $1,$3,$6}';exit;;  
+		-V) echo "$cmd $Revision: 1.10 $ $Date: 2020/03/02 10:17:01 $"|awk '{print $1,$3,$6}';exit;;  
 	esac
 done
 
@@ -32,7 +32,7 @@ while read ip count  ;do
 	   string="Connect:$ip ERROR:550 Mail not accepted from this domain"
 	   if ! grep -q  "$string" access; then
 	  	echo "$string" >> access
-	  	[ $verbose ] && echo "$cmd: $ip added to $access"
+	  	echo "$cmd: $ip added to $access"
 		added=`expr $added + 1`
 	   else
 	  	[ $verbose ] && echo "$cmd: $ip already included in $access"
